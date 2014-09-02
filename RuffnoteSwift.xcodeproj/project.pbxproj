@@ -1,0 +1,410 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9B4D35ED19B68B030067CBC9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4D35EC19B68B030067CBC9 /* AppDelegate.swift */; };
+		9B4D35EF19B68B030067CBC9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4D35EE19B68B030067CBC9 /* ViewController.swift */; };
+		9B4D35F219B68B030067CBC9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B4D35F019B68B030067CBC9 /* Main.storyboard */; };
+		9B4D35F419B68B030067CBC9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B4D35F319B68B030067CBC9 /* Images.xcassets */; };
+		9B4D360019B68B040067CBC9 /* RuffnoteSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4D35FF19B68B040067CBC9 /* RuffnoteSwiftTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9B4D35FA19B68B040067CBC9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9B4D35DF19B68B030067CBC9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9B4D35E619B68B030067CBC9;
+			remoteInfo = RuffnoteSwift;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9B4D35E719B68B030067CBC9 /* RuffnoteSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RuffnoteSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B4D35EB19B68B030067CBC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9B4D35EC19B68B030067CBC9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9B4D35EE19B68B030067CBC9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9B4D35F119B68B030067CBC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9B4D35F319B68B030067CBC9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		9B4D35F919B68B040067CBC9 /* RuffnoteSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RuffnoteSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B4D35FE19B68B040067CBC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9B4D35FF19B68B040067CBC9 /* RuffnoteSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuffnoteSwiftTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9B4D35E419B68B030067CBC9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9B4D35F619B68B040067CBC9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9B4D35DE19B68B030067CBC9 = {
+			isa = PBXGroup;
+			children = (
+				9B4D35E919B68B030067CBC9 /* RuffnoteSwift */,
+				9B4D35FC19B68B040067CBC9 /* RuffnoteSwiftTests */,
+				9B4D35E819B68B030067CBC9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9B4D35E819B68B030067CBC9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9B4D35E719B68B030067CBC9 /* RuffnoteSwift.app */,
+				9B4D35F919B68B040067CBC9 /* RuffnoteSwiftTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9B4D35E919B68B030067CBC9 /* RuffnoteSwift */ = {
+			isa = PBXGroup;
+			children = (
+				9B4D35EC19B68B030067CBC9 /* AppDelegate.swift */,
+				9B4D35EE19B68B030067CBC9 /* ViewController.swift */,
+				9B4D35F019B68B030067CBC9 /* Main.storyboard */,
+				9B4D35F319B68B030067CBC9 /* Images.xcassets */,
+				9B4D35EA19B68B030067CBC9 /* Supporting Files */,
+			);
+			path = RuffnoteSwift;
+			sourceTree = "<group>";
+		};
+		9B4D35EA19B68B030067CBC9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9B4D35EB19B68B030067CBC9 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9B4D35FC19B68B040067CBC9 /* RuffnoteSwiftTests */ = {
+			isa = PBXGroup;
+			children = (
+				9B4D35FF19B68B040067CBC9 /* RuffnoteSwiftTests.swift */,
+				9B4D35FD19B68B040067CBC9 /* Supporting Files */,
+			);
+			path = RuffnoteSwiftTests;
+			sourceTree = "<group>";
+		};
+		9B4D35FD19B68B040067CBC9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9B4D35FE19B68B040067CBC9 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9B4D35E619B68B030067CBC9 /* RuffnoteSwift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9B4D360319B68B040067CBC9 /* Build configuration list for PBXNativeTarget "RuffnoteSwift" */;
+			buildPhases = (
+				9B4D35E319B68B030067CBC9 /* Sources */,
+				9B4D35E419B68B030067CBC9 /* Frameworks */,
+				9B4D35E519B68B030067CBC9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RuffnoteSwift;
+			productName = RuffnoteSwift;
+			productReference = 9B4D35E719B68B030067CBC9 /* RuffnoteSwift.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9B4D35F819B68B040067CBC9 /* RuffnoteSwiftTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9B4D360619B68B040067CBC9 /* Build configuration list for PBXNativeTarget "RuffnoteSwiftTests" */;
+			buildPhases = (
+				9B4D35F519B68B040067CBC9 /* Sources */,
+				9B4D35F619B68B040067CBC9 /* Frameworks */,
+				9B4D35F719B68B040067CBC9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9B4D35FB19B68B040067CBC9 /* PBXTargetDependency */,
+			);
+			name = RuffnoteSwiftTests;
+			productName = RuffnoteSwiftTests;
+			productReference = 9B4D35F919B68B040067CBC9 /* RuffnoteSwiftTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9B4D35DF19B68B030067CBC9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = "Tatsuya Tobioka";
+				TargetAttributes = {
+					9B4D35E619B68B030067CBC9 = {
+						CreatedOnToolsVersion = 6.0;
+					};
+					9B4D35F819B68B040067CBC9 = {
+						CreatedOnToolsVersion = 6.0;
+						TestTargetID = 9B4D35E619B68B030067CBC9;
+					};
+				};
+			};
+			buildConfigurationList = 9B4D35E219B68B030067CBC9 /* Build configuration list for PBXProject "RuffnoteSwift" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9B4D35DE19B68B030067CBC9;
+			productRefGroup = 9B4D35E819B68B030067CBC9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9B4D35E619B68B030067CBC9 /* RuffnoteSwift */,
+				9B4D35F819B68B040067CBC9 /* RuffnoteSwiftTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9B4D35E519B68B030067CBC9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B4D35F219B68B030067CBC9 /* Main.storyboard in Resources */,
+				9B4D35F419B68B030067CBC9 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9B4D35F719B68B040067CBC9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9B4D35E319B68B030067CBC9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B4D35EF19B68B030067CBC9 /* ViewController.swift in Sources */,
+				9B4D35ED19B68B030067CBC9 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9B4D35F519B68B040067CBC9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B4D360019B68B040067CBC9 /* RuffnoteSwiftTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9B4D35FB19B68B040067CBC9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9B4D35E619B68B030067CBC9 /* RuffnoteSwift */;
+			targetProxy = 9B4D35FA19B68B040067CBC9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9B4D35F019B68B030067CBC9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9B4D35F119B68B030067CBC9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9B4D360119B68B040067CBC9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		9B4D360219B68B040067CBC9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9B4D360419B68B040067CBC9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = RuffnoteSwift/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		9B4D360519B68B040067CBC9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = RuffnoteSwift/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		9B4D360719B68B040067CBC9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = RuffnoteSwiftTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RuffnoteSwift.app/RuffnoteSwift";
+			};
+			name = Debug;
+		};
+		9B4D360819B68B040067CBC9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = RuffnoteSwiftTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RuffnoteSwift.app/RuffnoteSwift";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9B4D35E219B68B030067CBC9 /* Build configuration list for PBXProject "RuffnoteSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9B4D360119B68B040067CBC9 /* Debug */,
+				9B4D360219B68B040067CBC9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9B4D360319B68B040067CBC9 /* Build configuration list for PBXNativeTarget "RuffnoteSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9B4D360419B68B040067CBC9 /* Debug */,
+				9B4D360519B68B040067CBC9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		9B4D360619B68B040067CBC9 /* Build configuration list for PBXNativeTarget "RuffnoteSwiftTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9B4D360719B68B040067CBC9 /* Debug */,
+				9B4D360819B68B040067CBC9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9B4D35DF19B68B030067CBC9 /* Project object */;
+}
