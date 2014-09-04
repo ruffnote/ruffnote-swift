@@ -8,10 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		9B4D35ED19B68B030067CBC9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4D35EC19B68B030067CBC9 /* AppDelegate.swift */; };
-		9B4D35EF19B68B030067CBC9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4D35EE19B68B030067CBC9 /* ViewController.swift */; };
-		9B4D35F219B68B030067CBC9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B4D35F019B68B030067CBC9 /* Main.storyboard */; };
 		9B4D35F419B68B030067CBC9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B4D35F319B68B030067CBC9 /* Images.xcassets */; };
 		9B4D360019B68B040067CBC9 /* RuffnoteSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4D35FF19B68B040067CBC9 /* RuffnoteSwiftTests.swift */; };
+		9B4D360C19B825A30067CBC9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4D360B19B825A30067CBC9 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,12 +27,11 @@
 		9B4D35E719B68B030067CBC9 /* RuffnoteSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RuffnoteSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B4D35EB19B68B030067CBC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B4D35EC19B68B030067CBC9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9B4D35EE19B68B030067CBC9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		9B4D35F119B68B030067CBC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9B4D35F319B68B030067CBC9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		9B4D35F919B68B040067CBC9 /* RuffnoteSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RuffnoteSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B4D35FE19B68B040067CBC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B4D35FF19B68B040067CBC9 /* RuffnoteSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuffnoteSwiftTests.swift; sourceTree = "<group>"; };
+		9B4D360B19B825A30067CBC9 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,10 +74,9 @@
 			isa = PBXGroup;
 			children = (
 				9B4D35EC19B68B030067CBC9 /* AppDelegate.swift */,
-				9B4D35EE19B68B030067CBC9 /* ViewController.swift */,
-				9B4D35F019B68B030067CBC9 /* Main.storyboard */,
 				9B4D35F319B68B030067CBC9 /* Images.xcassets */,
 				9B4D35EA19B68B030067CBC9 /* Supporting Files */,
+				9B4D360B19B825A30067CBC9 /* HomeViewController.swift */,
 			);
 			path = RuffnoteSwift;
 			sourceTree = "<group>";
@@ -189,7 +186,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B4D35F219B68B030067CBC9 /* Main.storyboard in Resources */,
 				9B4D35F419B68B030067CBC9 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -208,8 +204,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B4D35EF19B68B030067CBC9 /* ViewController.swift in Sources */,
 				9B4D35ED19B68B030067CBC9 /* AppDelegate.swift in Sources */,
+				9B4D360C19B825A30067CBC9 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,17 +226,6 @@
 			targetProxy = 9B4D35FA19B68B040067CBC9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		9B4D35F019B68B030067CBC9 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9B4D35F119B68B030067CBC9 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		9B4D360119B68B040067CBC9 /* Debug */ = {
@@ -395,6 +380,7 @@
 				9B4D360519B68B040067CBC9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9B4D360619B68B040067CBC9 /* Build configuration list for PBXNativeTarget "RuffnoteSwiftTests" */ = {
 			isa = XCConfigurationList;
@@ -403,6 +389,7 @@
 				9B4D360819B68B040067CBC9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
