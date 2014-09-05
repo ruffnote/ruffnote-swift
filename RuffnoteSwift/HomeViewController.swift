@@ -18,6 +18,16 @@ class HomeViewController: UIViewController {
         self.view.addSubview(textView)
     }
 
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+
+        SVProgressHUD.show()
+        let when = dispatch_time(DISPATCH_TIME_NOW, Int64(10.0 * Double(NSEC_PER_SEC)))
+        dispatch_after(when, dispatch_get_main_queue(), {
+            SVProgressHUD.dismiss()
+        })
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
