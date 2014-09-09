@@ -1,10 +1,13 @@
 PODS:
+  - FXForms (1.1.6)
   - SVProgressHUD (1.0)
 
 DEPENDENCIES:
+  - FXForms (~> 1.1)
   - SVProgressHUD (~> 1.0)
 
 SPEC CHECKSUMS:
+  FXForms: 9387c60ee6f3e1c75e0f8998012acc1ce0ad8d0a
   SVProgressHUD: 5034c6e22b8c2ca3e09402e48d41ed0340aa1c50
 
 COCOAPODS: 0.33.1
