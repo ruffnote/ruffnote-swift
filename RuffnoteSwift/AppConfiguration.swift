@@ -6,7 +6,7 @@
 //  Copyright (c) 2014年 Tatsuya Tobioka. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 public class AppConfiguration: NSObject {
     private struct Defaults {
@@ -40,7 +40,6 @@ public class AppConfiguration: NSObject {
     }
     
     func userSignedIn() -> Bool {
-        //println("user \(currentUser().username)")
         return currentUser() != nil
     }
 }

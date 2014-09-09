@@ -6,7 +6,7 @@
 //  Copyright (c) 2014年 Tatsuya Tobioka. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 class User: NSCoder {
     var username: String;

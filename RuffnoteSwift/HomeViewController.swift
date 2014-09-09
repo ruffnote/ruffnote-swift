@@ -16,6 +16,8 @@ class HomeViewController: UIViewController {
         // Do any additional setup after loading the view.
         let textView = UITextView(frame: self.view.bounds)
         self.view.addSubview(textView)
+
+        AppConfiguration.sharedConfiguration.setCurrentUser(nil)
     }
 
     override func viewDidAppear(animated: Bool) {
@@ -29,11 +31,12 @@ class HomeViewController: UIViewController {
         })
         */
         
-        AppConfiguration.sharedConfiguration.setCurrentUser(nil)
         if !AppConfiguration.sharedConfiguration.userSignedIn() {
             let signInController = SignInViewController()
             let navController = UINavigationController(rootViewController: signInController);
             self.presentViewController(navController, animated: true, completion: nil)
+        } else {
+            println("\(AppConfiguration.sharedConfiguration.currentUser().username)")
         }
     }
     
