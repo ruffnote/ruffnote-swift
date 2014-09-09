@@ -13,6 +13,8 @@
 		9B4D360C19B825A30067CBC9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4D360B19B825A30067CBC9 /* HomeViewController.swift */; };
 		9BE255F119BD901B00D56006 /* SignInForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE255F019BD901B00D56006 /* SignInForm.swift */; };
 		9BE255F319BE820700D56006 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE255F219BE820700D56006 /* SignInViewController.swift */; };
+		9BE255F519BEB7C800D56006 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE255F419BEB7C800D56006 /* AppConfiguration.swift */; };
+		9BE255F719BEC3DF00D56006 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE255F619BEC3DF00D56006 /* User.swift */; };
 		FB3C8CA6BF744C588A775059 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA332BC6E4014D1992138787 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +40,8 @@
 		9B4D360D19B9312E0067CBC9 /* RuffnoteSwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RuffnoteSwift-Bridging-Header.h"; sourceTree = "<group>"; };
 		9BE255F019BD901B00D56006 /* SignInForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInForm.swift; sourceTree = "<group>"; };
 		9BE255F219BE820700D56006 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		9BE255F419BEB7C800D56006 /* AppConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
+		9BE255F619BEC3DF00D56006 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		9E6F38FD5A104AF992CE8F4E /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		CA332BC6E4014D1992138787 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -91,6 +95,8 @@
 				9B4D360D19B9312E0067CBC9 /* RuffnoteSwift-Bridging-Header.h */,
 				9BE255F019BD901B00D56006 /* SignInForm.swift */,
 				9BE255F219BE820700D56006 /* SignInViewController.swift */,
+				9BE255F419BEB7C800D56006 /* AppConfiguration.swift */,
+				9BE255F619BEC3DF00D56006 /* User.swift */,
 			);
 			path = RuffnoteSwift;
 			sourceTree = "<group>";
@@ -262,6 +268,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9BE255F319BE820700D56006 /* SignInViewController.swift in Sources */,
+				9BE255F519BEB7C800D56006 /* AppConfiguration.swift in Sources */,
+				9BE255F719BEC3DF00D56006 /* User.swift in Sources */,
 				9B4D35ED19B68B030067CBC9 /* AppDelegate.swift in Sources */,
 				9B4D360C19B825A30067CBC9 /* HomeViewController.swift in Sources */,
 				9BE255F119BD901B00D56006 /* SignInForm.swift in Sources */,
