@@ -15,6 +15,9 @@ class SignInViewController: FXFormViewController {
 
         self.title = NSLocalizedString("Sign in", comment: "")
         self.formController.form = SignInForm()
+        
+        let cancelItem = UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action: "cancelItemDidTap:")
+        self.navigationItem.leftBarButtonItem = cancelItem
     }
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
@@ -27,6 +30,19 @@ class SignInViewController: FXFormViewController {
 
     func signInDidTap() {
         let form = self.formController.form as SignInForm;
-        println("\(form.login):\(form.password)")
+
+        if form.login != nil {
+            let user = User(username: form.login)
+            AppConfiguration.sharedConfiguration.setCurrentUser(user)
+            self.close()
+        }        
+    }
+    
+    func cancelItemDidTap(sender: AnyObject!) {
+        self.close()
+    }
+    
+    func close() {
+        self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
     }
 }
