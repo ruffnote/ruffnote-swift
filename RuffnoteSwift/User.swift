@@ -10,16 +10,20 @@ import Foundation
 
 class User: NSCoder {
     var username: String;
+    var accessToken: String;
     
-    init(username: String) {
+    init(username: String, accessToken: String) {
         self.username = username
+        self.accessToken = accessToken
     }
     
     init(coder aDecoder: NSCoder!) {
         self.username = aDecoder.decodeObjectForKey("username") as String
+        self.accessToken = aDecoder.decodeObjectForKey("accessToken") as String
     }
     
     func encodeWithCoder(aCoder: NSCoder!) {
         aCoder.encodeObject(self.username, forKey: "username")
+        aCoder.encodeObject(self.accessToken, forKey: "accessToken")
     }
 }
