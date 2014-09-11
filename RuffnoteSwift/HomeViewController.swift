@@ -23,20 +23,22 @@ class HomeViewController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
 
-        /*
-        SVProgressHUD.show()
-        let when = dispatch_time(DISPATCH_TIME_NOW, Int64(10.0 * Double(NSEC_PER_SEC)))
-        dispatch_after(when, dispatch_get_main_queue(), {
-            SVProgressHUD.dismiss()
-        })
-        */
-        
-        if !AppConfiguration.sharedConfiguration.userSignedIn() {
+        if AppConfiguration.sharedConfiguration.userSignedIn() {
+            SVProgressHUD.show()
+            RuffnoteAPIClient.sharedClient.me(
+                accessToken: AppConfiguration.sharedConfiguration.currentUser().accessToken,
+                success: { (response: [String : AnyObject]) in
+                    println(response)
+                    SVProgressHUD.dismiss()
+                },
+                failure: { (message: String) in
+                    println(message)
+                    SVProgressHUD.dismiss()
+            })
+        } else {
             let signInController = SignInViewController()
             let navController = UINavigationController(rootViewController: signInController);
             self.presentViewController(navController, animated: true, completion: nil)
-        } else {
-            println("\(AppConfiguration.sharedConfiguration.currentUser().username)")
         }
     }
     
