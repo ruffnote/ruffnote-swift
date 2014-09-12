@@ -40,7 +40,7 @@ public class RuffnoteAPIClient: NSObject {
                 self.notes(
                     accessToken: accessToken,
                     success: { (notes: [Note]) in
-                        AppConfiguration.sharedConfiguration.setCurrentNote(notes[0])
+                        AppConfiguration.sharedConfiguration.setCurrentNote(notes.first)
                         success(accessToken)
                     },
                     failure: failure)
@@ -74,6 +74,26 @@ public class RuffnoteAPIClient: NSObject {
                     notes.append(Note(attributes: attributes))
                 }
                 success(notes)
+            },
+            failure: { (operation: AFHTTPRequestOperation!, error: NSError!) in
+                failure(error.localizedDescription)
+        })
+    }
+
+    func createPage(#accessToken: String, page: Page, success: () -> (), failure: String -> ()) {
+        let manager = authorizedManager(accessToken)
+        var params = [
+            "page" : [
+                "title" : page.title,
+                "content" : page.content
+            ]
+        ]
+        
+        manager.POST(
+            "\(site)\(version)/\(page.note.path)/pages",
+            parameters: params,
+            success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
+                success()
             },
             failure: { (operation: AFHTTPRequestOperation!, error: NSError!) in
                 failure(error.localizedDescription)
