@@ -36,7 +36,14 @@ public class RuffnoteAPIClient: NSObject {
             parameters: params,
             success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
                 let response = responseObject as [String : AnyObject]
-                success(responseObject["access_token"] as String)
+                let accessToken = responseObject["access_token"] as String
+                self.notes(
+                    accessToken: accessToken,
+                    success: { (notes: [Note]) in
+                        AppConfiguration.sharedConfiguration.setCurrentNote(notes[0])
+                        success(accessToken)
+                    },
+                    failure: failure)
             },
             failure: { (operation: AFHTTPRequestOperation!, error: NSError!) in
                 failure(error.localizedDescription)

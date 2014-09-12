@@ -11,6 +11,7 @@ import Foundation
 public class AppConfiguration: NSObject {
     private struct Defaults {
         static let currentUserKey = "AppConfiguration.Defaults.currentUserKey"
+        static let currentNoteKey = "AppConfiguration.Defaults.currentNoteKey"
     }
 
     public class var sharedConfiguration: AppConfiguration {
@@ -38,8 +39,26 @@ public class AppConfiguration: NSObject {
         }
         NSUserDefaults.standardUserDefaults().synchronize()
     }
-    
+
     func userSignedIn() -> Bool {
         return currentUser() != nil
+    }
+
+    func currentNote() -> Note? {
+        if let data = NSUserDefaults.standardUserDefaults().dataForKey(Defaults.currentNoteKey) {
+            return NSKeyedUnarchiver.unarchiveObjectWithData(data) as? Note
+        } else {
+            return nil
+        }
+    }
+    
+    func setCurrentNote(currentNote: Note?) {
+        if let note = currentNote {
+            let data = NSKeyedArchiver.archivedDataWithRootObject(note)
+            NSUserDefaults.standardUserDefaults().setObject(data, forKey: Defaults.currentNoteKey)
+        } else {
+            NSUserDefaults.standardUserDefaults().removeObjectForKey(Defaults.currentNoteKey)
+        }
+        NSUserDefaults.standardUserDefaults().synchronize()
     }
 }

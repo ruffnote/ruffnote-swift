@@ -10,43 +10,28 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    var titleButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         let textView = UITextView(frame: self.view.bounds)
         self.view.addSubview(textView)
+    
+        self.titleButton = UIButton.buttonWithType(.System) as UIButton
+        self.titleButton?.addTarget(self, action: "titleButtonDidTap:", forControlEvents: .TouchUpInside)
+        self.navigationItem.titleView = titleButton
 
         AppConfiguration.sharedConfiguration.setCurrentUser(nil)
+        AppConfiguration.sharedConfiguration.setCurrentNote(nil)
     }
 
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
 
         if AppConfiguration.sharedConfiguration.userSignedIn() {
-            SVProgressHUD.show()
-            /*
-            RuffnoteAPIClient.sharedClient.me(
-                accessToken: AppConfiguration.sharedConfiguration.currentUser().accessToken,
-                success: { (response: [String : AnyObject]) in
-                    println(response)
-                    SVProgressHUD.dismiss()
-                },
-                failure: { (message: String) in
-                    println(message)
-                    SVProgressHUD.dismiss()
-            })
-            */
-            RuffnoteAPIClient.sharedClient.notes(
-                accessToken: AppConfiguration.sharedConfiguration.currentUser().accessToken,
-                success: { (notes: [Note]) in
-                    println(notes.map { (n) in n.label })
-                    SVProgressHUD.dismiss()
-                },
-                failure: { (message: String) in
-                    println(message)
-                    SVProgressHUD.dismiss()
-            })
+            self.titleButton?.setTitle(AppConfiguration.sharedConfiguration.currentNote()?.label, forState: .Normal)
         } else {
             let signInController = SignInViewController()
             let navController = UINavigationController(rootViewController: signInController)
@@ -59,6 +44,11 @@ class HomeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func titleButtonDidTap(sender: AnyObject) {
+        let selectContrller = SelectNoteViewController()
+        let navController = UINavigationController(rootViewController: selectContrller)
+        self.presentViewController(navController, animated: true, completion: nil)
+    }
 
     /*
     // MARK: - Navigation
