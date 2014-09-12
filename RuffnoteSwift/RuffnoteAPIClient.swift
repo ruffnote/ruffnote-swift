@@ -55,7 +55,24 @@ public class RuffnoteAPIClient: NSObject {
                 failure(error.localizedDescription)
         })
     }
-    
+
+    func notes(#accessToken: String, success: [Note] -> (), failure: String -> ()) {
+        let manager = authorizedManager(accessToken)
+        manager.GET(
+            "\(site)\(version)/notes",
+            parameters: nil,
+            success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
+                var notes = [Note]()
+                for attributes : NSDictionary in responseObject as Array {
+                    notes.append(Note(attributes: attributes))
+                }
+                success(notes)
+            },
+            failure: { (operation: AFHTTPRequestOperation!, error: NSError!) in
+                failure(error.localizedDescription)
+        })
+    }
+
     private func authorizedManager(accessToken: String) -> AFHTTPRequestOperationManager{
         let manager = AFHTTPRequestOperationManager()
         manager.requestSerializer.setValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")

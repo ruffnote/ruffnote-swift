@@ -17,6 +17,8 @@
 		9BE255F719BEC3DF00D56006 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE255F619BEC3DF00D56006 /* User.swift */; };
 		9BE255F919C02DED00D56006 /* AppSecret.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE255F819C02DED00D56006 /* AppSecret.swift */; };
 		9BE255FB19C0370100D56006 /* RuffnoteAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE255FA19C0370100D56006 /* RuffnoteAPIClient.swift */; };
+		9BE255FD19C27B5F00D56006 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE255FC19C27B5F00D56006 /* Note.swift */; };
+		9BE255FF19C27B6B00D56006 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE255FE19C27B6B00D56006 /* Team.swift */; };
 		FB3C8CA6BF744C588A775059 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA332BC6E4014D1992138787 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +48,8 @@
 		9BE255F619BEC3DF00D56006 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		9BE255F819C02DED00D56006 /* AppSecret.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSecret.swift; sourceTree = "<group>"; };
 		9BE255FA19C0370100D56006 /* RuffnoteAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RuffnoteAPIClient.swift; sourceTree = "<group>"; };
+		9BE255FC19C27B5F00D56006 /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		9BE255FE19C27B6B00D56006 /* Team.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		9E6F38FD5A104AF992CE8F4E /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		CA332BC6E4014D1992138787 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -103,6 +107,8 @@
 				9BE255F619BEC3DF00D56006 /* User.swift */,
 				9BE255F819C02DED00D56006 /* AppSecret.swift */,
 				9BE255FA19C0370100D56006 /* RuffnoteAPIClient.swift */,
+				9BE255FC19C27B5F00D56006 /* Note.swift */,
+				9BE255FE19C27B6B00D56006 /* Team.swift */,
 			);
 			path = RuffnoteSwift;
 			sourceTree = "<group>";
@@ -278,8 +284,10 @@
 				9BE255F719BEC3DF00D56006 /* User.swift in Sources */,
 				9B4D35ED19B68B030067CBC9 /* AppDelegate.swift in Sources */,
 				9BE255FB19C0370100D56006 /* RuffnoteAPIClient.swift in Sources */,
+				9BE255FD19C27B5F00D56006 /* Note.swift in Sources */,
 				9B4D360C19B825A30067CBC9 /* HomeViewController.swift in Sources */,
 				9BE255F119BD901B00D56006 /* SignInForm.swift in Sources */,
+				9BE255FF19C27B6B00D56006 /* Team.swift in Sources */,
 				9BE255F919C02DED00D56006 /* AppSecret.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
