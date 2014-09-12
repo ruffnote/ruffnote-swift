@@ -8,9 +8,18 @@
 
 import UIKit
 
-class Team: NSObject {
+class Team: NSObject, NSCoding {
     var name: String
+
     init(name: String) {
         self.name = name
+    }
+    
+    required init(coder aDecoder: NSCoder) {
+        self.name = aDecoder.decodeObjectForKey("name") as String
+    }
+    
+    func encodeWithCoder(aCoder: NSCoder) {
+        aCoder.encodeObject(self.name, forKey: "name")
     }
 }

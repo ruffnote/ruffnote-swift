@@ -19,6 +19,7 @@
 		9BE255FB19C0370100D56006 /* RuffnoteAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE255FA19C0370100D56006 /* RuffnoteAPIClient.swift */; };
 		9BE255FD19C27B5F00D56006 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE255FC19C27B5F00D56006 /* Note.swift */; };
 		9BE255FF19C27B6B00D56006 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE255FE19C27B6B00D56006 /* Team.swift */; };
+		9BE2560119C2993F00D56006 /* SelectNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE2560019C2993E00D56006 /* SelectNoteViewController.swift */; };
 		FB3C8CA6BF744C588A775059 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA332BC6E4014D1992138787 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +51,7 @@
 		9BE255FA19C0370100D56006 /* RuffnoteAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RuffnoteAPIClient.swift; sourceTree = "<group>"; };
 		9BE255FC19C27B5F00D56006 /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		9BE255FE19C27B6B00D56006 /* Team.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
+		9BE2560019C2993E00D56006 /* SelectNoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectNoteViewController.swift; sourceTree = "<group>"; };
 		9E6F38FD5A104AF992CE8F4E /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		CA332BC6E4014D1992138787 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -109,6 +111,7 @@
 				9BE255FA19C0370100D56006 /* RuffnoteAPIClient.swift */,
 				9BE255FC19C27B5F00D56006 /* Note.swift */,
 				9BE255FE19C27B6B00D56006 /* Team.swift */,
+				9BE2560019C2993E00D56006 /* SelectNoteViewController.swift */,
 			);
 			path = RuffnoteSwift;
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BE2560119C2993F00D56006 /* SelectNoteViewController.swift in Sources */,
 				9BE255F319BE820700D56006 /* SignInViewController.swift in Sources */,
 				9BE255F519BEB7C800D56006 /* AppConfiguration.swift in Sources */,
 				9BE255F719BEC3DF00D56006 /* User.swift in Sources */,
