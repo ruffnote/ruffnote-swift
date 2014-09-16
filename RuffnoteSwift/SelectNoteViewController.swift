@@ -69,15 +69,19 @@ class SelectNoteViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.notes.count
+        return self.notes.count + 1
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell
 
         // Configure the cell...
-        let note = notes[indexPath.row]
-        cell.textLabel?.text = note.label
+        if indexPath.row < self.notes.count {
+            let note = self.notes[indexPath.row]
+            cell.textLabel?.text = note.label
+        } else {
+            cell.textLabel?.text = NSLocalizedString("New note", comment: "")
+        }
 
         return cell
     }
@@ -93,8 +97,13 @@ class SelectNoteViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let note = notes[indexPath.row]
-        AppConfiguration.sharedConfiguration.setCurrentNote(note)
-        self.close()
+        if indexPath.row < self.notes.count {
+            let note = self.notes[indexPath.row]
+            AppConfiguration.sharedConfiguration.setCurrentNote(note)
+            self.close()
+        } else {
+            let newNoteController = NewNoteViewController()
+            self.navigationController?.pushViewController(newNoteController, animated: true)
+        }
     }
 }
