@@ -26,8 +26,8 @@ class HomeViewController: UIViewController {
         self.titleButton?.addTarget(self, action: "titleButtonDidTap:", forControlEvents: .TouchUpInside)
         self.navigationItem.titleView = titleButton
 
-        AppConfiguration.sharedConfiguration.setCurrentUser(nil)
-        AppConfiguration.sharedConfiguration.setCurrentNote(nil)
+        //AppConfiguration.sharedConfiguration.setCurrentUser(nil)
+        //AppConfiguration.sharedConfiguration.setCurrentNote(nil)
     }
 
     override func viewWillAppear(animated: Bool) {
