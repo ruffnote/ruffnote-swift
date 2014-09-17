@@ -45,7 +45,40 @@ class NewNoteViewController: FXFormViewController {
         let form = self.formController.form as NoteForm;
         
         if form.title != nil {
-            println("\(form.title) \(form.isPrivate)")
+            let note = Note(attributes: [
+                "title" : form.title,
+                "is_private" : form.isPrivate,
+                "format" : "html",
+                "name" : "",
+                "team" : [
+                    "name" : AppConfiguration.sharedConfiguration.currentUser().username
+                ]
+                ])
+            SVProgressHUD.show()
+            RuffnoteAPIClient.sharedClient.createNote(
+                accessToken: AppConfiguration.sharedConfiguration.currentUser().accessToken,
+                note: note,
+                success: { (note: Note) in
+                    AppConfiguration.sharedConfiguration.setCurrentNote(note)
+                    self.close()
+                    SVProgressHUD.dismiss()
+                },
+                failure: { (message: String) in
+                    let alertController = UIAlertController(
+                        title: NSLocalizedString("Error", comment: ""),
+                        message: message,
+                        preferredStyle: .Alert)
+                    alertController.addAction(UIAlertAction(
+                        title: NSLocalizedString("OK", comment: ""),
+                        style: .Default,
+                        handler: nil))
+                    self.presentViewController(alertController, animated: true, completion: nil)
+                    SVProgressHUD.dismiss()
+            })
         }
+    }
+    
+    func close() {
+        self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
     }
 }

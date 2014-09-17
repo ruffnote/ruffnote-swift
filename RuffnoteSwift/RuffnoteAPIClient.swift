@@ -100,6 +100,29 @@ public class RuffnoteAPIClient: NSObject {
         })
     }
 
+    func createNote(#accessToken: String, note: Note, success: Note -> (), failure: String -> ()) {
+        let manager = authorizedManager(accessToken)
+        var params = [
+            "note" : [
+                "title" : note.title,
+                "is_private" : note.isPrivate,
+                "format" : note.format,
+                "team" : note.team.name
+            ]
+        ]
+        
+        manager.POST(
+            "\(site)\(version)/notes",
+            parameters: params,
+            success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
+                let note = Note(attributes: responseObject as NSDictionary)
+                success(note)
+            },
+            failure: { (operation: AFHTTPRequestOperation!, error: NSError!) in
+                failure(error.localizedDescription)
+        })
+    }
+    
     private func authorizedManager(accessToken: String) -> AFHTTPRequestOperationManager{
         let manager = AFHTTPRequestOperationManager()
         manager.requestSerializer.setValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")

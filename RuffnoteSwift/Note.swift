@@ -10,8 +10,8 @@ import UIKit
 
 class Note: NSObject, NSCoding {
     var title: String
-    var name: String
     var isPrivate: Bool
+    var name: String
     var format: String
     var team: Team
     var label: String {
