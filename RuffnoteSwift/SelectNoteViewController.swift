@@ -8,9 +8,12 @@
 
 import UIKit
 
-class SelectNoteViewController: UITableViewController {
+class SelectNoteViewController: UITableViewController, UISearchResultsUpdating {
 
     var notes = [Note]()
+
+    var searchController: UISearchController!
+    var searchResults = [Note]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +26,20 @@ class SelectNoteViewController: UITableViewController {
         self.navigationItem.leftBarButtonItem = cancelItem
         
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
+
+
+        let searchResultsController = UITableViewController(style: .Plain)
+        searchResultsController.tableView.dataSource = self
+        searchResultsController.tableView.delegate = self
+        searchResultsController.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
+
+        self.searchController = UISearchController(searchResultsController: searchResultsController)
+        self.searchController.searchResultsUpdater = self
+
+        self.searchController.searchBar.sizeToFit()
+        self.tableView.tableHeaderView = self.searchController.searchBar
+
+        self.definesPresentationContext = true
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -69,18 +86,27 @@ class SelectNoteViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.notes.count + 1
+        if tableView == self.tableView {
+            return self.notes.count + 1
+        } else {
+            return self.searchResults.count
+        }
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell
 
         // Configure the cell...
-        if indexPath.row < self.notes.count {
-            let note = self.notes[indexPath.row]
-            cell.textLabel?.text = note.label
+        if tableView == self.tableView {
+            if indexPath.row < self.notes.count {
+                let note = self.notes[indexPath.row]
+                cell.textLabel?.text = note.label
+            } else {
+                cell.textLabel?.text = NSLocalizedString("New note", comment: "")
+            }
         } else {
-            cell.textLabel?.text = NSLocalizedString("New note", comment: "")
+            let note = self.searchResults[indexPath.row]
+            cell.textLabel?.text = note.label
         }
 
         return cell
@@ -97,13 +123,37 @@ class SelectNoteViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if indexPath.row < self.notes.count {
-            let note = self.notes[indexPath.row]
+        if tableView == self.tableView {
+            if indexPath.row < self.notes.count {
+                let note = self.notes[indexPath.row]
+                AppConfiguration.sharedConfiguration.setCurrentNote(note)
+                self.close()
+            } else {
+                let newNoteController = NewNoteViewController()
+                self.navigationController?.pushViewController(newNoteController, animated: true)
+            }
+        } else {
+            let note = self.searchResults[indexPath.row]
             AppConfiguration.sharedConfiguration.setCurrentNote(note)
             self.close()
-        } else {
-            let newNoteController = NewNoteViewController()
-            self.navigationController?.pushViewController(newNoteController, animated: true)
         }
+    }
+    
+    // MARK: UISearchResultsUpdating
+    
+    func updateSearchResultsForSearchController(searchController: UISearchController) {
+        
+        let searchString = self.searchController.searchBar.text
+        
+        self.searchResults = self.notes.filter { note in
+            if let range = note.label.rangeOfString(searchString, options: .CaseInsensitiveSearch) {
+                return true
+            } else {
+                return false
+            }
+        }
+        
+        let tableViewController = self.searchController.searchResultsController as UITableViewController
+        tableViewController.tableView.reloadData()
     }
 }
