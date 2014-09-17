@@ -19,15 +19,15 @@ class HomeViewController: UIViewController {
         let saveItem = UIBarButtonItem(barButtonSystemItem: .Save, target: self, action: "saveItemDidTap:")
         self.navigationItem.rightBarButtonItem = saveItem
 
+        let settingsItem = UIBarButtonItem(title: NSLocalizedString("Settings", comment: ""), style: .Plain, target: self, action: "settingsItemDidTap:")
+        self.navigationItem.leftBarButtonItem = settingsItem
+        
         self.textView = UITextView(frame: self.view.bounds)
         self.view.addSubview(self.textView)
     
         self.titleButton = UIButton.buttonWithType(.System) as UIButton
         self.titleButton?.addTarget(self, action: "titleButtonDidTap:", forControlEvents: .TouchUpInside)
         self.navigationItem.titleView = titleButton
-
-        //AppConfiguration.sharedConfiguration.setCurrentUser(nil)
-        //AppConfiguration.sharedConfiguration.setCurrentNote(nil)
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -107,6 +107,12 @@ class HomeViewController: UIViewController {
         })
     }
     
+    func settingsItemDidTap(sender: AnyObject) {
+        let settingsContrller = SettingsViewController()
+        let navController = UINavigationController(rootViewController: settingsContrller)
+        self.presentViewController(navController, animated: true, completion: nil)
+    }
+
     // MARK: Keyboard
     
     func handleKeyboardWillShowNotification(notification: NSNotification) {

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B1211C619C956FF006DD8C4 /* SettingsForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1211C519C956FF006DD8C4 /* SettingsForm.swift */; };
+		9B1211C819C95870006DD8C4 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1211C719C95870006DD8C4 /* SettingsViewController.swift */; };
 		9B4D35ED19B68B030067CBC9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4D35EC19B68B030067CBC9 /* AppDelegate.swift */; };
 		9B4D35F419B68B030067CBC9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B4D35F319B68B030067CBC9 /* Images.xcassets */; };
 		9B4D360019B68B040067CBC9 /* RuffnoteSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4D35FF19B68B040067CBC9 /* RuffnoteSwiftTests.swift */; };
@@ -37,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9B1211C519C956FF006DD8C4 /* SettingsForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsForm.swift; sourceTree = "<group>"; };
+		9B1211C719C95870006DD8C4 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		9B4D35E719B68B030067CBC9 /* RuffnoteSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RuffnoteSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B4D35EB19B68B030067CBC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B4D35EC19B68B030067CBC9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -148,6 +152,7 @@
 				9BE255F219BE820700D56006 /* SignInViewController.swift */,
 				9BE2560019C2993E00D56006 /* SelectNoteViewController.swift */,
 				9BAA60D719C81181008F32B4 /* NewNoteViewController.swift */,
+				9B1211C719C95870006DD8C4 /* SettingsViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -162,6 +167,7 @@
 				9BE255FE19C27B6B00D56006 /* Team.swift */,
 				9BE2560219C2CDD000D56006 /* Page.swift */,
 				9BAA60D519C8109D008F32B4 /* NoteForm.swift */,
+				9B1211C519C956FF006DD8C4 /* SettingsForm.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -309,10 +315,12 @@
 			files = (
 				9BE2560119C2993F00D56006 /* SelectNoteViewController.swift in Sources */,
 				9BE255F319BE820700D56006 /* SignInViewController.swift in Sources */,
+				9B1211C619C956FF006DD8C4 /* SettingsForm.swift in Sources */,
 				9BE2560319C2CDD000D56006 /* Page.swift in Sources */,
 				9BE255F519BEB7C800D56006 /* AppConfiguration.swift in Sources */,
 				9BE255F719BEC3DF00D56006 /* User.swift in Sources */,
 				9BAA60D619C8109D008F32B4 /* NoteForm.swift in Sources */,
+				9B1211C819C95870006DD8C4 /* SettingsViewController.swift in Sources */,
 				9B4D35ED19B68B030067CBC9 /* AppDelegate.swift in Sources */,
 				9BE255FB19C0370100D56006 /* RuffnoteAPIClient.swift in Sources */,
 				9BE255FD19C27B5F00D56006 /* Note.swift in Sources */,
