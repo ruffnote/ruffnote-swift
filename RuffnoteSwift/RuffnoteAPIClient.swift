@@ -14,8 +14,8 @@ public class RuffnoteAPIClient: NSObject {
     let version = "/api/v1"
 
     public class var sharedClient: RuffnoteAPIClient {
-    struct Singleton {
-        static let sharedClient = RuffnoteAPIClient()
+        struct Singleton {
+            static let sharedClient = RuffnoteAPIClient()
         }
         
         return Singleton.sharedClient
