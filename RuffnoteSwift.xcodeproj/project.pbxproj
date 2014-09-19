@@ -13,6 +13,7 @@
 		9B4D35F419B68B030067CBC9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B4D35F319B68B030067CBC9 /* Images.xcassets */; };
 		9B4D360019B68B040067CBC9 /* RuffnoteSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4D35FF19B68B040067CBC9 /* RuffnoteSwiftTests.swift */; };
 		9B4D360C19B825A30067CBC9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4D360B19B825A30067CBC9 /* HomeViewController.swift */; };
+		9B98A60619CB9BDE005CEB5F /* PageQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B98A60519CB9BDE005CEB5F /* PageQueue.swift */; };
 		9BAA60D619C8109D008F32B4 /* NoteForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAA60D519C8109D008F32B4 /* NoteForm.swift */; };
 		9BAA60D819C81181008F32B4 /* NewNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAA60D719C81181008F32B4 /* NewNoteViewController.swift */; };
 		9BE255F119BD901B00D56006 /* SignInForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE255F019BD901B00D56006 /* SignInForm.swift */; };
@@ -50,6 +51,7 @@
 		9B4D35FF19B68B040067CBC9 /* RuffnoteSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuffnoteSwiftTests.swift; sourceTree = "<group>"; };
 		9B4D360B19B825A30067CBC9 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		9B4D360D19B9312E0067CBC9 /* RuffnoteSwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RuffnoteSwift-Bridging-Header.h"; sourceTree = "<group>"; };
+		9B98A60519CB9BDE005CEB5F /* PageQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageQueue.swift; sourceTree = "<group>"; };
 		9BAA60D519C8109D008F32B4 /* NoteForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteForm.swift; sourceTree = "<group>"; };
 		9BAA60D719C81181008F32B4 /* NewNoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewNoteViewController.swift; sourceTree = "<group>"; };
 		9BE255F019BD901B00D56006 /* SignInForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInForm.swift; sourceTree = "<group>"; };
@@ -114,8 +116,6 @@
 				9B4D360D19B9312E0067CBC9 /* RuffnoteSwift-Bridging-Header.h */,
 				9BAA60D419C8107F008F32B4 /* Models */,
 				9BAA60D319C81065008F32B4 /* Controllers */,
-				9BE255F419BEB7C800D56006 /* AppConfiguration.swift */,
-				9BE255F819C02DED00D56006 /* AppSecret.swift */,
 			);
 			path = RuffnoteSwift;
 			sourceTree = "<group>";
@@ -168,6 +168,9 @@
 				9BE2560219C2CDD000D56006 /* Page.swift */,
 				9BAA60D519C8109D008F32B4 /* NoteForm.swift */,
 				9B1211C519C956FF006DD8C4 /* SettingsForm.swift */,
+				9BE255F419BEB7C800D56006 /* AppConfiguration.swift */,
+				9BE255F819C02DED00D56006 /* AppSecret.swift */,
+				9B98A60519CB9BDE005CEB5F /* PageQueue.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 				9BAA60D619C8109D008F32B4 /* NoteForm.swift in Sources */,
 				9B1211C819C95870006DD8C4 /* SettingsViewController.swift in Sources */,
 				9B4D35ED19B68B030067CBC9 /* AppDelegate.swift in Sources */,
+				9B98A60619CB9BDE005CEB5F /* PageQueue.swift in Sources */,
 				9BE255FB19C0370100D56006 /* RuffnoteAPIClient.swift in Sources */,
 				9BE255FD19C27B5F00D56006 /* Note.swift in Sources */,
 				9BAA60D819C81181008F32B4 /* NewNoteViewController.swift in Sources */,

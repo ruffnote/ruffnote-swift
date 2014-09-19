@@ -27,7 +27,7 @@ class SelectNoteViewController: UITableViewController, UISearchResultsUpdating {
         
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
 
-
+        // SearchController
         let searchResultsController = UITableViewController(style: .Plain)
         searchResultsController.tableView.dataSource = self
         searchResultsController.tableView.delegate = self

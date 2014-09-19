@@ -13,21 +13,36 @@ class HomeViewController: UIViewController {
     var textView: UITextView!
     var titleButton: UIButton!
     
+    var queueItem: UIBarButtonItem!
+    
+    let iconSize: CGFloat = 20.0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let saveItem = UIBarButtonItem(barButtonSystemItem: .Save, target: self, action: "saveItemDidTap:")
-        self.navigationItem.rightBarButtonItem = saveItem
+        // Left
+        let barsIcon = FAKFontAwesome.barsIconWithSize(self.iconSize)
+        let barsImage = barsIcon.imageWithSize(CGSize(width: self.iconSize, height: self.iconSize))
+        let menuItem = UIBarButtonItem(image: barsImage, style: .Plain, target: self, action: "menuItemDidTap:")
+        self.navigationItem.leftBarButtonItem = menuItem
 
-        let settingsItem = UIBarButtonItem(title: NSLocalizedString("Settings", comment: ""), style: .Plain, target: self, action: "settingsItemDidTap:")
-        self.navigationItem.leftBarButtonItem = settingsItem
+        // Right
+        let checkIcon = FAKFontAwesome.checkIconWithSize(self.iconSize)
+        let checkImage = checkIcon.imageWithSize(CGSize(width: self.iconSize, height: self.iconSize))
+        let saveItem = UIBarButtonItem(image: checkImage, style: .Plain, target: self, action: "saveItemDidTap:")
+        //self.navigationItem.rightBarButtonItem = saveItem
         
-        self.textView = UITextView(frame: self.view.bounds)
-        self.view.addSubview(self.textView)
-    
+        self.queueItem = UIBarButtonItem(title: "\(PageQueue.defaultQueue.count)", style: .Plain, target: nil, action: nil)
+        self.navigationItem.rightBarButtonItems = [saveItem, self.queueItem]
+        
+        // Title
         self.titleButton = UIButton.buttonWithType(.System) as UIButton
         self.titleButton?.addTarget(self, action: "titleButtonDidTap:", forControlEvents: .TouchUpInside)
         self.navigationItem.titleView = titleButton
+        
+        // TextView
+        self.textView = UITextView(frame: self.view.bounds)
+        self.view.addSubview(self.textView)
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -36,6 +51,8 @@ class HomeViewController: UIViewController {
         let notificationCenter = NSNotificationCenter.defaultCenter()
         notificationCenter.addObserver(self, selector: "handleKeyboardWillShowNotification:", name: UIKeyboardWillShowNotification, object: nil)
         notificationCenter.addObserver(self, selector: "handleKeyboardWillHideNotification:", name: UIKeyboardWillHideNotification, object: nil)
+        
+        notificationCenter.addObserver(self, selector: "handlePageQueueDidUpdateNotification:", name: PageQueueDidUpdateNotification, object: nil)
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -58,6 +75,8 @@ class HomeViewController: UIViewController {
         }
         
         self.textView.becomeFirstResponder()
+        
+        PageQueue.defaultQueue.synchronize()
     }
     
     override func didReceiveMemoryWarning() {
@@ -76,8 +95,6 @@ class HomeViewController: UIViewController {
             return
         }
 
-        SVProgressHUD.show()
-
         var lines = self.textView.text.componentsSeparatedByString("\n")
         let title = lines.removeAtIndex(0).stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
 
@@ -86,31 +103,35 @@ class HomeViewController: UIViewController {
         let content = joiner.join(lines).stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
 
         let page = Page(title: title, content: content, note: note)
-        RuffnoteAPIClient.sharedClient.createPage(
-            accessToken: AppConfiguration.sharedConfiguration.currentUser().accessToken,
-            page: page,
-            success: {
-                self.textView.text = ""
-                SVProgressHUD.dismiss()
-            },
-            failure: { (message: String) in
-                let alertController = UIAlertController(
-                    title: NSLocalizedString("Error", comment: ""),
-                    message: message,
-                    preferredStyle: .Alert)
-                alertController.addAction(UIAlertAction(
-                    title: NSLocalizedString("OK", comment: ""),
-                    style: .Default,
-                    handler: nil))
-                self.presentViewController(alertController, animated: true, completion: nil)
-                SVProgressHUD.dismiss()
-        })
+        PageQueue.defaultQueue.add(page)
+        self.textView.text = ""
+        PageQueue.defaultQueue.synchronize()
     }
     
-    func settingsItemDidTap(sender: AnyObject) {
-        let settingsContrller = SettingsViewController()
-        let navController = UINavigationController(rootViewController: settingsContrller)
-        self.presentViewController(navController, animated: true, completion: nil)
+    func menuItemDidTap(sender: AnyObject) {
+        let alertController = UIAlertController(
+            title: NSLocalizedString("Menu", comment: ""),
+            message: nil,
+            preferredStyle: .ActionSheet)
+        alertController.addAction(UIAlertAction(
+            title: NSLocalizedString("Settings", comment: ""),
+            style: .Default,
+            handler: { action in
+                let settingsContrller = SettingsViewController()
+                let navController = UINavigationController(rootViewController: settingsContrller)
+                self.presentViewController(navController, animated: true, completion: nil)
+        }))
+        alertController.addAction(UIAlertAction(
+            title: NSLocalizedString("Clear", comment: ""),
+            style: .Default,
+            handler: { action in
+                self.textView.text = ""
+        }))
+        alertController.addAction(UIAlertAction(
+            title: NSLocalizedString("Cancel", comment: ""),
+            style: .Cancel,
+            handler: nil))
+        self.presentViewController(alertController, animated: true, completion: nil)
     }
 
     // MARK: Keyboard
@@ -142,5 +163,11 @@ class HomeViewController: UIViewController {
 
         let selectedRange = textView.selectedRange
         textView.scrollRangeToVisible(selectedRange)
+    }
+    
+    // MARK: PageQueue
+    
+    func handlePageQueueDidUpdateNotification(notification: NSNotification) {
+        self.queueItem.title = "\(PageQueue.defaultQueue.count)"
     }
 }
