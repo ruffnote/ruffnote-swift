@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Accounts
 
 public class RuffnoteAPIClient: NSObject {
     
@@ -37,6 +38,89 @@ public class RuffnoteAPIClient: NSObject {
             success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
                 let response = responseObject as [String : AnyObject]
                 let accessToken = responseObject["access_token"] as String
+                self.notes(
+                    accessToken: accessToken,
+                    success: { (notes: [Note]) in
+                        AppConfiguration.sharedConfiguration.setCurrentNote(notes.first)
+                        success(accessToken)
+                    },
+                    failure: failure)
+            },
+            failure: { (operation: AFHTTPRequestOperation!, error: NSError!) in
+                failure(error.localizedDescription)
+        })
+    }
+    
+    func signInWithFacebook(#success: String -> (), failure: String -> ()) {
+        
+        let accountStore = ACAccountStore()
+        let accountType = accountStore.accountTypeWithAccountTypeIdentifier(ACAccountTypeIdentifierFacebook)
+        
+        let options = [
+            ACFacebookAppIdKey : AppSecret.OAuth.facebookAppId,
+            ACFacebookAudienceKey : ACFacebookAudienceOnlyMe,
+            ACFacebookPermissionsKey : ["email"]
+        ]
+        
+        accountStore.requestAccessToAccountsWithType(
+            accountType,
+            options: options) { (granted: Bool, error: NSError!) in
+                dispatch_async(dispatch_get_main_queue(), {
+                    if granted {
+                        self.permitWithFacebook(success: success, failure: failure)
+                    } else {
+                        failure(error.localizedDescription)
+                    }
+                })
+        }
+    }
+    
+    func permitWithFacebook(#success: String -> (), failure: String -> ()) {
+        
+        let accountStore = ACAccountStore()
+        let accountType = accountStore.accountTypeWithAccountTypeIdentifier(ACAccountTypeIdentifierFacebook)
+        
+        let options = [
+            ACFacebookAppIdKey : AppSecret.OAuth.facebookAppId,
+            ACFacebookAudienceKey : ACFacebookAudienceOnlyMe,
+            ACFacebookPermissionsKey : ["email", "user_groups", "user_friends"]
+        ]
+        
+        accountStore.requestAccessToAccountsWithType(
+            accountType,
+            options: options) { (granted: Bool, error: NSError!) in
+                dispatch_async(dispatch_get_main_queue(), {
+                    
+                    if !granted {
+                        failure(error.localizedDescription)
+                        return
+                    }
+                    
+                    let accounts = accountStore.accountsWithAccountType(accountType)
+                    let account = accounts.last as ACAccount
+                    let credential = account.credential
+                    let token = credential.oauthToken
+                    
+                    self.verifyAccount(token: token, success: success, failure: failure)
+                })
+        }
+    }
+    
+    func verifyAccount(#token: String, success: String -> (), failure: String -> ()) {
+        let manager = AFHTTPRequestOperationManager()
+        var params = [
+            "access_token" : token,
+            "access_token_secret" : "",
+            "client_id" : AppSecret.OAuth.clientId,
+            "provider" : "facebook"
+        ]
+        
+        manager.POST(
+            "\(site)\(version)/verify_account",
+            parameters: params,
+            success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
+                let response = responseObject as [String : AnyObject]
+                let accessToken = responseObject["token"] as String
                 self.notes(
                     accessToken: accessToken,
                     success: { (notes: [Note]) in

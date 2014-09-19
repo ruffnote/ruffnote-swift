@@ -35,6 +35,11 @@ class SignInForm: NSObject, FXForm {
                 "title" : NSLocalizedString("Sign in", comment: ""),
                 "header" : "",
                 "action" : "signInDidTap"
+            ],
+            [
+                "title" : NSLocalizedString("Sign in with Facebook", comment: ""),
+                "header" : "",
+                "action" : "facebookDidTap"
             ]
         ]
     }

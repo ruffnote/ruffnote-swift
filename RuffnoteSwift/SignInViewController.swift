@@ -57,6 +57,49 @@ class SignInViewController: FXFormViewController {
         }
     }
     
+    func facebookDidTap() {
+        SVProgressHUD.show()
+        RuffnoteAPIClient.sharedClient.signInWithFacebook(
+            success: { (accessToken: String) in
+                
+                RuffnoteAPIClient.sharedClient.me(
+                    accessToken: accessToken,
+                    success: { (response: [String : AnyObject]) in
+                        let username = response["username"]! as String
+                        let user = User(username: username, accessToken: accessToken)
+                        AppConfiguration.sharedConfiguration.setCurrentUser(user)
+                        SVProgressHUD.dismiss()
+                        self.close()
+                    },
+                    failure: { (message: String) in
+                        let alertController = UIAlertController(
+                            title: NSLocalizedString("Error", comment: ""),
+                            message: message,
+                            preferredStyle: .Alert)
+                        alertController.addAction(UIAlertAction(
+                            title: NSLocalizedString("OK", comment: ""),
+                            style: .Default,
+                            handler: nil))
+                        self.presentViewController(alertController, animated: true, completion: nil)
+                        SVProgressHUD.dismiss()
+                    }
+                )
+            },
+            failure: { (message: String) in
+                let alertController = UIAlertController(
+                    title: NSLocalizedString("Error", comment: ""),
+                    message: message,
+                    preferredStyle: .Alert)
+                alertController.addAction(UIAlertAction(
+                    title: NSLocalizedString("OK", comment: ""),
+                    style: .Default,
+                    handler: nil))
+                self.presentViewController(alertController, animated: true, completion: nil)
+                SVProgressHUD.dismiss()
+            }
+        )
+    }
+    
     func cancelItemDidTap(sender: AnyObject!) {
         self.close()
     }
