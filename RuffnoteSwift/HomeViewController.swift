@@ -19,6 +19,8 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.view.backgroundColor = UIColor.whiteColor()
 
         // Left
         let barsIcon = FAKFontAwesome.barsIconWithSize(self.iconSize)
@@ -150,15 +152,13 @@ class HomeViewController: UIViewController {
         
         let animationDuration: NSTimeInterval = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as NSNumber).doubleValue
         
-        let keyboardScreenBeginFrame = (userInfo[UIKeyboardFrameBeginUserInfoKey] as NSValue).CGRectValue()
         let keyboardScreenEndFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as NSValue).CGRectValue()
-        let keyboardViewBeginFrame = view.convertRect(keyboardScreenBeginFrame, fromView: view.window)
         let keyboardViewEndFrame = view.convertRect(keyboardScreenEndFrame, fromView: view.window)
         
-        let originDelta = keyboardViewEndFrame.origin.y - keyboardViewBeginFrame.origin.y
-
+        let height = CGRectGetHeight(self.view.bounds) - CGRectGetHeight(keyboardViewEndFrame)
+        
         UIView.animateWithDuration(animationDuration, delay: 0, options: UIViewAnimationOptions.BeginFromCurrentState, animations: {
-                self.textView.frame.size.height += originDelta
+                self.textView.frame.size.height = height
             }, completion: nil)
 
         let selectedRange = textView.selectedRange
