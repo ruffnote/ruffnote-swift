@@ -13,7 +13,7 @@ class SettingsForm: NSObject, FXForm {
     func extraFields() -> [AnyObject]! {
         return [
             [
-                "title" : "test",
+                "title" :  AppConfiguration.sharedConfiguration.currentUser().username,
                 "header" : "",
                 "type" : "label",
             ],
