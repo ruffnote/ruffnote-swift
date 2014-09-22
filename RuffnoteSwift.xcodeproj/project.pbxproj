@@ -16,6 +16,7 @@
 		9B98A60619CB9BDE005CEB5F /* PageQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B98A60519CB9BDE005CEB5F /* PageQueue.swift */; };
 		9BAA60D619C8109D008F32B4 /* NoteForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAA60D519C8109D008F32B4 /* NoteForm.swift */; };
 		9BAA60D819C81181008F32B4 /* NewNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAA60D719C81181008F32B4 /* NewNoteViewController.swift */; };
+		9BDCBF3C19CFE67100E053FE /* Pods-acknowledgements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9BDCBF3B19CFE67100E053FE /* Pods-acknowledgements.plist */; };
 		9BE255F119BD901B00D56006 /* SignInForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE255F019BD901B00D56006 /* SignInForm.swift */; };
 		9BE255F319BE820700D56006 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE255F219BE820700D56006 /* SignInViewController.swift */; };
 		9BE255F519BEB7C800D56006 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE255F419BEB7C800D56006 /* AppConfiguration.swift */; };
@@ -54,6 +55,7 @@
 		9B98A60519CB9BDE005CEB5F /* PageQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageQueue.swift; sourceTree = "<group>"; };
 		9BAA60D519C8109D008F32B4 /* NoteForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteForm.swift; sourceTree = "<group>"; };
 		9BAA60D719C81181008F32B4 /* NewNoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewNoteViewController.swift; sourceTree = "<group>"; };
+		9BDCBF3B19CFE67100E053FE /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = "<group>"; };
 		9BE255F019BD901B00D56006 /* SignInForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInForm.swift; sourceTree = "<group>"; };
 		9BE255F219BE820700D56006 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		9BE255F419BEB7C800D56006 /* AppConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 		9B4D35E919B68B030067CBC9 /* RuffnoteSwift */ = {
 			isa = PBXGroup;
 			children = (
+				9BDCBF3B19CFE67100E053FE /* Pods-acknowledgements.plist */,
 				9B4D35EC19B68B030067CBC9 /* AppDelegate.swift */,
 				9B4D35F319B68B030067CBC9 /* Images.xcassets */,
 				9B4D35EA19B68B030067CBC9 /* Supporting Files */,
@@ -267,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B4D35F419B68B030067CBC9 /* Images.xcassets in Resources */,
+				9BDCBF3C19CFE67100E053FE /* Pods-acknowledgements.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -25,17 +25,20 @@ PODS:
     - FontAwesomeKit/Core
   - FXForms (1.1.6)
   - SVProgressHUD (1.0)
+  - VTAcknowledgementsViewController (0.11)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.4)
   - FontAwesomeKit/FontAwesome (~> 2.1)
   - FXForms (~> 1.1)
   - SVProgressHUD (~> 1.0)
+  - VTAcknowledgementsViewController (~> 0.11)
 
 SPEC CHECKSUMS:
   AFNetworking: 0aabc6fae66d6e5d039eeb21c315843c7aae51ab
   FontAwesomeKit: a2edea3111dab107b4cc43b85881b404eb063385
   FXForms: 9387c60ee6f3e1c75e0f8998012acc1ce0ad8d0a
   SVProgressHUD: 5034c6e22b8c2ca3e09402e48d41ed0340aa1c50
+  VTAcknowledgementsViewController: 6e71652adbe73c68f0a278a73ac9ca1e1fc00b90
 
 COCOAPODS: 0.33.1

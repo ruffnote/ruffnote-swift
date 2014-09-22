@@ -21,6 +21,11 @@ class SettingsForm: NSObject, FXForm {
                 "title" : NSLocalizedString("Sign out", comment: ""),
                 "header" : "",
                 "action" : "signOutDidTap",
+            ],
+            [
+                "title" : NSLocalizedString("Licenses", comment: ""),
+                "header" : "",
+                "action" : "licensesDidTap",
             ]
         ]
     }
