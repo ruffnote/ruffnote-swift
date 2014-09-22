@@ -17,6 +17,7 @@
 		9BAA60D619C8109D008F32B4 /* NoteForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAA60D519C8109D008F32B4 /* NoteForm.swift */; };
 		9BAA60D819C81181008F32B4 /* NewNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAA60D719C81181008F32B4 /* NewNoteViewController.swift */; };
 		9BDCBF3C19CFE67100E053FE /* Pods-acknowledgements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9BDCBF3B19CFE67100E053FE /* Pods-acknowledgements.plist */; };
+		9BDCBF3F19CFF38E00E053FE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9BDCBF4119CFF38E00E053FE /* Localizable.strings */; };
 		9BE255F119BD901B00D56006 /* SignInForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE255F019BD901B00D56006 /* SignInForm.swift */; };
 		9BE255F319BE820700D56006 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE255F219BE820700D56006 /* SignInViewController.swift */; };
 		9BE255F519BEB7C800D56006 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE255F419BEB7C800D56006 /* AppConfiguration.swift */; };
@@ -56,6 +57,8 @@
 		9BAA60D519C8109D008F32B4 /* NoteForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteForm.swift; sourceTree = "<group>"; };
 		9BAA60D719C81181008F32B4 /* NewNoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewNoteViewController.swift; sourceTree = "<group>"; };
 		9BDCBF3B19CFE67100E053FE /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = "<group>"; };
+		9BDCBF4019CFF38E00E053FE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9BDCBF4219CFF3B500E053FE /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9BE255F019BD901B00D56006 /* SignInForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInForm.swift; sourceTree = "<group>"; };
 		9BE255F219BE820700D56006 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		9BE255F419BEB7C800D56006 /* AppConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
@@ -126,6 +129,7 @@
 		9B4D35EA19B68B030067CBC9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9BDCBF4119CFF38E00E053FE /* Localizable.strings */,
 				9B4D35EB19B68B030067CBC9 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -252,6 +256,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ja,
 			);
 			mainGroup = 9B4D35DE19B68B030067CBC9;
 			productRefGroup = 9B4D35E819B68B030067CBC9 /* Products */;
@@ -270,6 +275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B4D35F419B68B030067CBC9 /* Images.xcassets in Resources */,
+				9BDCBF3F19CFF38E00E053FE /* Localizable.strings in Resources */,
 				9BDCBF3C19CFE67100E053FE /* Pods-acknowledgements.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -358,6 +364,18 @@
 			targetProxy = 9B4D35FA19B68B040067CBC9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9BDCBF4119CFF38E00E053FE /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9BDCBF4019CFF38E00E053FE /* en */,
+				9BDCBF4219CFF3B500E053FE /* ja */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		9B4D360119B68B040067CBC9 /* Debug */ = {
