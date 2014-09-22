@@ -6,3 +6,4 @@
 #import "FXForms.h"
 #import "AFNetworking.h"
 #import <FontAwesomeKit/FAKFontAwesome.h>
+#import "VTAcknowledgementsViewController.h"

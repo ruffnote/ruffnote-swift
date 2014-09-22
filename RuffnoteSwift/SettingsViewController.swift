@@ -32,6 +32,12 @@ class SettingsViewController: FXFormViewController {
         self.close()
     }
     
+    func licensesDidTap() {
+        let path = NSBundle.mainBundle().pathForResource("Pods-acknowledgements", ofType: "plist")
+        let acknowledgementsController = VTAcknowledgementsViewController(acknowledgementsPlistPath: path)
+        self.navigationController?.pushViewController(acknowledgementsController, animated: true)
+    }
+    
     func cancelItemDidTap(sender: AnyObject!) {
         self.close()
     }
