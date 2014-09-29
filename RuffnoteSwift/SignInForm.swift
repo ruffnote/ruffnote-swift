@@ -9,8 +9,8 @@
 import UIKit
 
 class SignInForm: NSObject, FXForm {
-    var login: String!;
-    var password: String!;
+    var login: String!
+    var password: String!
     
     func fields() -> [AnyObject]! {
         return ["login", "password"]

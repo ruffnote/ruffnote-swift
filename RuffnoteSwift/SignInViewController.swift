@@ -29,7 +29,7 @@ class SignInViewController: FXFormViewController {
     }
 
     func signInDidTap() {
-        let form = self.formController.form as SignInForm;
+        let form = self.formController.form as SignInForm
 
         if form.login != nil && form.password != nil {
             SVProgressHUD.show()
