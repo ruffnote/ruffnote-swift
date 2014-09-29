@@ -37,12 +37,12 @@ class NewNoteViewController: FXFormViewController {
     }
     
     func isPrivateDidTap(cell: FXFormFieldCellProtocol) {
-        let form = self.formController.form as NoteForm;
+        let form = self.formController.form as NoteForm
         form.isPrivate = !form.isPrivate
     }
     
     func submitDidTap() {
-        let form = self.formController.form as NoteForm;
+        let form = self.formController.form as NoteForm
         
         if form.title != nil {
             let note = Note(attributes: [

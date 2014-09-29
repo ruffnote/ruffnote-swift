@@ -9,8 +9,8 @@
 import Foundation
 
 class User: NSCoder {
-    var username: String;
-    var accessToken: String;
+    var username: String
+    var accessToken: String
     
     init(username: String, accessToken: String) {
         self.username = username

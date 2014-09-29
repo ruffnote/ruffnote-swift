@@ -69,7 +69,11 @@ public class RuffnoteAPIClient: NSObject {
                     if granted {
                         self.permitWithFacebook(success: success, failure: failure)
                     } else {
-                        failure(error.localizedDescription)
+                        if error.code == Int(ACErrorAccountNotFound.value) {
+                            failure(NSLocalizedString("Please set Facebook account on Settings app.", comment: ""));
+                        } else {
+                            failure(error.localizedDescription)
+                        }
                     }
                 })
         }
