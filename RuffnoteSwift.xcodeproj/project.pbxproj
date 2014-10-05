@@ -28,6 +28,9 @@
 		9BE255FF19C27B6B00D56006 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE255FE19C27B6B00D56006 /* Team.swift */; };
 		9BE2560119C2993F00D56006 /* SelectNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE2560019C2993E00D56006 /* SelectNoteViewController.swift */; };
 		9BE2560319C2CDD000D56006 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE2560219C2CDD000D56006 /* Page.swift */; };
+		D08CF51E19E176A500309490 /* NewIssueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08CF51D19E176A500309490 /* NewIssueViewController.swift */; };
+		D0CE420B19D8FAC70041D026 /* SelectIssueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CE420A19D8FAC70041D026 /* SelectIssueViewController.swift */; };
+		D0F4F6DC19DC3A18004CD722 /* Issue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F4F6DB19DC3A18004CD722 /* Issue.swift */; };
 		FB3C8CA6BF744C588A775059 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA332BC6E4014D1992138787 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +74,9 @@
 		9BE2560219C2CDD000D56006 /* Page.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 		9E6F38FD5A104AF992CE8F4E /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		CA332BC6E4014D1992138787 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D08CF51D19E176A500309490 /* NewIssueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewIssueViewController.swift; sourceTree = "<group>"; };
+		D0CE420A19D8FAC70041D026 /* SelectIssueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectIssueViewController.swift; sourceTree = "<group>"; };
+		D0F4F6DB19DC3A18004CD722 /* Issue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Issue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,7 +164,9 @@
 				9B4D360B19B825A30067CBC9 /* HomeViewController.swift */,
 				9BE255F219BE820700D56006 /* SignInViewController.swift */,
 				9BE2560019C2993E00D56006 /* SelectNoteViewController.swift */,
+				D0CE420A19D8FAC70041D026 /* SelectIssueViewController.swift */,
 				9BAA60D719C81181008F32B4 /* NewNoteViewController.swift */,
+				D08CF51D19E176A500309490 /* NewIssueViewController.swift */,
 				9B1211C719C95870006DD8C4 /* SettingsViewController.swift */,
 			);
 			name = Controllers;
@@ -171,6 +179,7 @@
 				9BE255F619BEC3DF00D56006 /* User.swift */,
 				9BE255FA19C0370100D56006 /* RuffnoteAPIClient.swift */,
 				9BE255FC19C27B5F00D56006 /* Note.swift */,
+				D0F4F6DB19DC3A18004CD722 /* Issue.swift */,
 				9BE255FE19C27B6B00D56006 /* Team.swift */,
 				9BE2560219C2CDD000D56006 /* Page.swift */,
 				9BAA60D519C8109D008F32B4 /* NoteForm.swift */,
@@ -329,6 +338,8 @@
 			files = (
 				9BE2560119C2993F00D56006 /* SelectNoteViewController.swift in Sources */,
 				9BE255F319BE820700D56006 /* SignInViewController.swift in Sources */,
+				D0CE420B19D8FAC70041D026 /* SelectIssueViewController.swift in Sources */,
+				D0F4F6DC19DC3A18004CD722 /* Issue.swift in Sources */,
 				9B1211C619C956FF006DD8C4 /* SettingsForm.swift in Sources */,
 				9BE2560319C2CDD000D56006 /* Page.swift in Sources */,
 				9BE255F519BEB7C800D56006 /* AppConfiguration.swift in Sources */,
@@ -338,6 +349,7 @@
 				9B4D35ED19B68B030067CBC9 /* AppDelegate.swift in Sources */,
 				9B98A60619CB9BDE005CEB5F /* PageQueue.swift in Sources */,
 				9BE255FB19C0370100D56006 /* RuffnoteAPIClient.swift in Sources */,
+				D08CF51E19E176A500309490 /* NewIssueViewController.swift in Sources */,
 				9BE255FD19C27B5F00D56006 /* Note.swift in Sources */,
 				9BAA60D819C81181008F32B4 /* NewNoteViewController.swift in Sources */,
 				9B4D360C19B825A30067CBC9 /* HomeViewController.swift in Sources */,
