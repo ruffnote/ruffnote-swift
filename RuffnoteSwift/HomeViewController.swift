@@ -87,7 +87,8 @@ class HomeViewController: UIViewController {
     }
     
     func titleButtonDidTap(sender: AnyObject) {
-        let selectContrller = SelectNoteViewController()
+        // let selectContrller = SelectNoteViewController()
+        let selectContrller = SelectIssueViewController()
         let navController = UINavigationController(rootViewController: selectContrller)
         self.presentViewController(navController, animated: true, completion: nil)
     }

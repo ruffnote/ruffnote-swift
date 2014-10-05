@@ -167,7 +167,24 @@ public class RuffnoteAPIClient: NSObject {
                 failure(error.localizedDescription)
         })
     }
-
+    
+    func issues(#accessToken: String, success: [Issue] -> (), failure: String -> ()) {
+        let manager = authorizedManager(accessToken)
+        manager.GET(
+            "\(site)\(version)/my_issues",
+            parameters: nil,
+            success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
+                var issues = [Issue]()
+                for attributes : NSDictionary in responseObject as Array {
+                    issues.append(Issue(attributes: attributes))
+                }
+                success(issues)
+            },
+            failure: { (operation: AFHTTPRequestOperation!, error: NSError!) in
+                failure(error.localizedDescription)
+        })
+    }
+    
     func createPage(#accessToken: String, page: Page, success: () -> (), failure: String -> ()) {
         let manager = authorizedManager(accessToken)
         var params = [
@@ -195,7 +212,8 @@ public class RuffnoteAPIClient: NSObject {
                 "title" : note.title,
                 "is_private" : note.isPrivate,
                 "format" : note.format,
-                "team" : note.team.name
+                // "team" : note.team.name
+                "team" : "pandeiro245"
             ]
         ]
         
@@ -205,6 +223,27 @@ public class RuffnoteAPIClient: NSObject {
             success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
                 let note = Note(attributes: responseObject as NSDictionary)
                 success(note)
+            },
+            failure: { (operation: AFHTTPRequestOperation!, error: NSError!) in
+                failure(error.localizedDescription)
+        })
+    }
+
+    func createIssue(#accessToken: String, issue: Issue, success: () -> (), failure: String -> ()) {
+        let manager = authorizedManager(accessToken)
+        var params = [
+            "issue" : [
+                "title" : issue.title,
+                "description" : issue.description
+            ]
+        ]
+        
+        manager.POST(
+            // "\(site)\(version)/\(issue.note.path)/issues",
+            "\(site)\(version)/pandeiro245/1257/issues",
+            parameters: params,
+            success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
+                success()
             },
             failure: { (operation: AFHTTPRequestOperation!, error: NSError!) in
                 failure(error.localizedDescription)
